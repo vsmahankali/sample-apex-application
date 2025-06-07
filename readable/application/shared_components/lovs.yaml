@@ -1,0 +1,172 @@
+---
+- # ====== List of Values: S_REGION.NAME =======================
+  id: 24187368716030870030
+  identification: 
+    name: S_REGION.NAME
+
+  subscription: 
+    version-number: 15615091240631
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: S_REGION
+
+  column-mapping: 
+    return: ID
+    display: NAME
+    default-sort: NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: S_EMP.LAST_NAME =====================
+  id: 24187370237368870032
+  identification: 
+    name: S_EMP.LAST_NAME
+
+  subscription: 
+    version-number: 15615091240654
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: S_EMP
+
+  column-mapping: 
+    return: ID
+    display: LAST_NAME
+    default-sort: LAST_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: S_CUSTOMER.NAME =====================
+  id: 24187401264910870242
+  identification: 
+    name: S_CUSTOMER.NAME
+
+  subscription: 
+    version-number: 15615091242466
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: S_CUSTOMER
+
+  column-mapping: 
+    return: ID
+    display: NAME
+    default-sort: NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: S_CUSTOMER.CREDIT_RATING ============
+  id: 24187758573502898595
+  identification: 
+    name: S_CUSTOMER.CREDIT_RATING
+
+  subscription: 
+    version-number: 15615091585213
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: Excellent ====================================
+    id: 24187758878927898597
+    entry: 
+      sequence: 1
+      display: Excellent
+      return: EXCELLENT
+
+  - # ====== Entry: Good =========================================
+    id: 24187759265001898598
+    entry: 
+      sequence: 2
+      display: Good
+      return: GOOD
+
+  - # ====== Entry: Poor =========================================
+    id: 24187759690284898598
+    entry: 
+      sequence: 3
+      display: Poor
+      return: POOR
+
+- # ====== List of Values: S_ORD.PAYMENT_TYPE ==================
+  id: 24187820350006914863
+  identification: 
+    name: S_ORD.PAYMENT_TYPE
+
+  subscription: 
+    version-number: 15615091747144
+
+  source: 
+    location: Static Values
+
+  entries: 
+  - # ====== Entry: CASH =========================================
+    id: 24187820795583914870
+    entry: 
+      sequence: 1
+      display: CASH
+      return: CASH
+
+  - # ====== Entry: CREDIT =======================================
+    id: 24187821129407914870
+    entry: 
+      sequence: 2
+      display: CREDIT
+      return: CREDIT
+
+  - # ====== Entry: CHECK ========================================
+    id: 24187821553622914871
+    entry: 
+      sequence: 3
+      display: CHECK
+      return: CHECK
+
+- # ====== List of Values: SALES_REP_LOV =======================
+  id: 24187934475803637034
+  identification: 
+    name: SALES_REP_LOV
+
+  subscription: 
+    version-number: 15615091669049
+
+  source: 
+    location: Local Database
+    type: SQL Query
+    sql-query: |
+      select S_EMP.ID as ID,
+         S_EMP.FIRST_NAME ||' '|| S_EMP.LAST_NAME as FULL_NAME,
+         S_EMP.FIRST_NAME ,
+         S_EMP.LAST_NAME
+      from S_EMP S_EMP
+      where title = 'Sales Representative'
+
+  column-mapping: 
+    return: ID
+    display: FULL_NAME
+    default-sort: FULL_NAME
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: S_PRODUCT.NAME ======================
+  id: 24188230648648651337
+  identification: 
+    name: S_PRODUCT.NAME
+
+  subscription: 
+    version-number: 15615091807471
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: S_PRODUCT
+
+  column-mapping: 
+    return: ID
+    display: NAME
+    default-sort: NAME
+    sort-direction: Ascending (Nulls Last)
+
